@@ -60,7 +60,7 @@ Matplotlib
 
 Clone the repository:
 
-git clone <repo>
+git clone <https://github.com/AVANTHIREDDY1214/CODSOFT.2.git>
 
 
 Install dependencies (if not already installed):
