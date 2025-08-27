@@ -1,87 +1,80 @@
-Customer Churn Prediction
+Credit Card Fraud Detection
+This project implements machine learning models to detect fraudulent credit card transactions using the Fraud Detection Dataset.
+Due to the high class imbalance, SMOTE (Synthetic Minority Over-sampling Technique) was applied to balance the dataset before training.
 
-This repository contains an end-to-end machine learning project for predicting customer churn, completed as part of an internship provided by CodSoft. The goal is to build predictive models that help businesses identify customers who are likely to leave, enabling proactive retention strategies.
-
-📂 Dataset
-
-The dataset used is Churn_Modelling.csv, which includes features such as customer demographics, account information, and activity metrics. The target variable is:
-
-Exited – indicates whether a customer has churned (1) or not (0).
-
-🛠 Project Overview
-
-The project follows a complete machine learning pipeline:
-
-Data Loading & Exploration
-
-Check dataset shape and preview data.
-
-Data Preprocessing
-
-Encode categorical variables using LabelEncoder.
-
-Split dataset into training and testing sets.
-
-Scale features using StandardScaler.
-
-Modeling
-
-Built and evaluated three models:
-
+📌 Dataset
+Train set shape: (6226, 23)
+Test set shape: (4667, 23)
+Target column: is_fraud (0 = Legitimate, 1 = Fraud)
+⚙ Workflow
+Import required libraries
+Load training and testing datasets
+Remove non-numerical columns
+Handle class imbalance using SMOTE
+Scale features with StandardScaler
+Train multiple models:
 Logistic Regression
+Decision Tree
+Random Forest
+Evaluate results with:
+Confusion Matrix
+Classification Report
+ROC-AUC Score
+🧪 Results
+Logistic Regression
+Confusion Matrix:
+[[   0 4646]
+ [   0   21]]
 
-Random Forest Classifier
+Classification Report:
+              precision    recall  f1-score   support
 
-Gradient Boosting Classifier
+         0.0       0.00      0.00      0.00      4646
+         1.0       0.00      1.00      0.01        21
 
-Evaluation
+    accuracy                           0.00      4667
+   macro avg       0.00      0.50      0.00      4667
+weighted avg       0.00      0.00      0.00      4667
 
-Classification report
+ROC-AUC Score: 0.5
+Decision Tree
+Confusion Matrix:
+[[4642    4]
+ [  21    0]]
 
-Confusion matrix
+Classification Report:
+              precision    recall  f1-score   support
 
-ROC-AUC scores
+         0.0       1.00      1.00      1.00      4646
+         1.0       0.00      0.00      0.00        21
 
-Feature Importance
+    accuracy                           0.99      4667
+   macro avg       0.50      0.50      0.50      4667
+weighted avg       0.99      0.99      0.99      4667
 
-Visualize feature importance using Random Forest.
+ROC-AUC Score: 0.4995
+Random Forest
+Confusion Matrix:
+[[4646    0]
+ [  21    0]]
 
-🧰 Technologies Used
+Classification Report:
+              precision    recall  f1-score   support
 
-Python
+         0.0       1.00      1.00      1.00      4646
+         1.0       0.00      0.00      0.00        21
 
-Pandas & NumPy
+    accuracy                           1.00      4667
+   macro avg       0.50      0.50      0.50      4667
+weighted avg       0.99      1.00      0.99      4667
 
-Scikit-learn
-
-Matplotlib
-
-🚀 How to Run
-
-Clone the repository:
-
-git clone <https://github.com/AVANTHIREDDY1214/CODSOFT.2.git>
-
-
-Install dependencies (if not already installed):
-
-pip install -r requirements.txt
-
-
-Run the notebook or Python script:
-
-python churn_prediction.py
-
-📊 Results
-
-Logistic Regression, Random Forest, and Gradient Boosting models were trained and evaluated.
-
-Feature importance analysis highlights which factors contribute most to customer churn.
-
-📝 Conclusion
-
-This project demonstrates a complete workflow for building a predictive model for customer churn, from data preprocessing to model evaluation and visualization. It provides practical insights into machine learning for business analytics.
-
-📌 Acknowledgment
-
-Project completed as part of CodSoft internship program.
+ROC-AUC Score: 0.5
+📊 Observations
+Logistic Regression failed to classify legitimate transactions (all predicted as fraud).
+Decision Tree and Random Forest classified legitimate transactions well but completely failed on fraud detection due to extreme class imbalance.
+ROC-AUC scores are ~0.5, indicating poor discrimination ability.
+🚀 Future Improvements
+Use ensemble methods like XGBoost or LightGBM.
+Apply advanced resampling techniques (e.g., SMOTEENN, ADASYN).
+Engineer additional fraud-related features.
+Try deep learning models for anomaly detection.
