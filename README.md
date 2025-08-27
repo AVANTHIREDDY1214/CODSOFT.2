@@ -6,6 +6,7 @@ Due to the high class imbalance, SMOTE (Synthetic Minority Over-sampling Techniq
 Train set shape: (6226, 23)
 Test set shape: (4667, 23)
 Target column: is_fraud (0 = Legitimate, 1 = Fraud)
+
 ⚙ Workflow
 Import required libraries
 Load training and testing datasets
@@ -20,6 +21,8 @@ Evaluate results with:
 Confusion Matrix
 Classification Report
 ROC-AUC Score
+
+
 🧪 Results
 Logistic Regression
 Confusion Matrix:
