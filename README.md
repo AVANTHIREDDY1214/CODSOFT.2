@@ -81,3 +81,18 @@ Use ensemble methods like XGBoost or LightGBM.
 Apply advanced resampling techniques (e.g., SMOTEENN, ADASYN).
 Engineer additional fraud-related features.
 Try deep learning models for anomaly detection.
+
+⚙️ Installation
+Clone the repository:
+
+git clone https://github.com/AVANTHIREDDY1214/CODSOFT.2.git
+cd codsoft.1
+Install dependencies:
+
+pip install -r requirements.txt
+Create a requirements.txt file with:
+
+pandas
+numpy
+scikit-learn
+
